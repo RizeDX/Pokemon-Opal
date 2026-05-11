@@ -6564,50 +6564,50 @@ Price = 0
 Flags = KeyItem
 Description = A faded sea chart that shows the way to a certain island.
 #-------------------------------
-[BUTTERFRITE]
-Name = Butterfrite
-NamePlural = Butterfites
+[LURANTISITE]
+Name = Lurantisite
+NamePlural = Lurantisite
 Pocket = 1
 Price = 0
 BPPrice = 50
 Flags = MegaStone,Fling_80
-Description = One of a variety of mysterious Mega Stones. Have Butterfree hold it, and it will be able to Mega Evolve.
+Description = One of a variety of mysterious Mega Stones. Have Lurantis hold it, and it will be able to Mega Evolve.
 #-------------------------------
-[MACHAMPITE]
-Name = Machampite
-NamePlural = Machampites
+[EXPLOUDITE]
+Name = Exploudite
+NamePlural = Exploudites
 Pocket = 1
 Price = 0
 BPPrice = 50
 Flags = MegaStone,Fling_80
-Description = One of a variety of mysterious Mega Stones. Have Machamp hold it, and it will be able to Mega Evolve.
+Description = One of a variety of mysterious Mega Stones. Have Exploud hold it, and it will be able to Mega Evolve.
 #-------------------------------
-[KINGLERITE]
-Name = Kinglerite
-NamePlural = Kingerites
+[WEAVILITE]
+Name = Weavilite
+NamePlural = Weavilite
 Pocket = 1
 Price = 0
 BPPrice = 50
 Flags = MegaStone,Fling_80
-Description = One of a variety of mysterious Mega Stones. Have Kingler hold it, and it will be able to Mega Evolve.
+Description = One of a variety of mysterious Mega Stones. Have Weavile hold it, and it will be able to Mega Evolve.
 #-------------------------------
-[LAPRASITE]
-Name = Laprasite
-NamePlural = Laprasites
+[GLISCORITE]
+Name = Gliscorite
+NamePlural = Gliscorites
 Pocket = 1
 Price = 0
 BPPrice = 50
 Flags = MegaStone,Fling_80
-Description = One of a variety of mysterious Mega Stones. Have Lapras hold it, and it will be able to Mega Evolve.
+Description = One of a variety of mysterious Mega Stones. Have Gliscor hold it, and it will be able to Mega Evolve.
 #-------------------------------
-[SNORLAXITE]
-Name = Snorlaxite
-NamePlural = Snorlaxites
+[ROTOMITE]
+Name = Rotomite
+NamePlural = Rotomites
 Pocket = 1
 Price = 0
 BPPrice = 50
 Flags = MegaStone,Fling_80
-Description = One of a variety of mysterious Mega Stones. Have Snorlax hold it, and it will be able to Mega Evolve.
+Description = One of a variety of mysterious Mega Stones. Have Rotom hold it, and it will be able to Mega Evolve.
 #-------------------------------
 [GARBODORITE]
 Name = Garbodorite

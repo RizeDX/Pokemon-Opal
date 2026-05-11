@@ -2373,66 +2373,66 @@ Shape = Quadruped
 Category = High King
 Pokedex = Legend says that by using its power to see all events from past to future, this Pokémon saved the creatures of a forest from a meteorite strike.
 #-------------------------------
-[BUTTERFREE,1]
-FormName = Mega Butterfree
-MegaStone = BUTTERFRITE
-Types = BUG,PSYCHIC
-BaseStats = 60,45,60,100,140,120
+[LURANTIS,1]
+FormName = Mega Lurantis
+MegaStone = LURANTISITE
+Types = GRASS
+BaseStats = 70,160,110,55,80,105
 BaseExp = 284
-Abilities = GALEWINGS
-HiddenAbilities = GALEWINGS
-Height = 5.4
-Weight = 80.5
-Pokedex = Its wings have grown massive in size. It has the ability to summon tornadoes the size of skyscrapers.
-Generation = 6
+Abilities = SHARPNESS
+HiddenAbilities = SHARPNESS
+Height = 1.4
+Weight = 20.5
+Pokedex = Its grace in its battling style leaves foes in awe as it slices them up.
+Generation = 8
 #-------------------------------
-[MACHAMP,1]
-FormName = Mega Machamp
-MegaStone = MACHAMPITE
-BaseStats = 90,180,120,55,65,85
+[EXPLOUD,1]
+FormName = Mega Exploud
+MegaStone = EXPLOUDITE
+BaseStats = 104,91,83,88,131,93
 BaseExp = 320
-Abilities = STEADFAST
-HiddenAbilities = STEADFAST
-Height = 2.3
+Abilities = PUNKROCK
+HiddenAbilities = PUNKROCK
+Height = 1.8
 Weight = 132.5
-Pokedex = The fists Mega Machamp has can expel powerful explosions. One punch is enough to shatter a meteor.
-Generation = 6
+Pokedex = The shockwaves Mega Exploud emits can shatter oncoming meteors!
+Generation = 8
 #-------------------------------
-[KINGLER,1]
-FormName = Mega Kingler
-MegaStone = KINGLERITE
-BaseStats = 55,160,155,80,55,70
+[WEAVILE,1]
+FormName = Mega Weavile
+MegaStone = WEAVILITE
+BaseStats = 70,145,80,155,60,80
 BaseExp = 236
-Abilities = WATERBUBBLE
-HiddenAbilities = WATERBUBBLE
-Height = 1.6
-Weight = 68.3
-Pokedex = The bubbles on its body provide it protection from burns. Anyone trying to catch it as a meal may find themselves on the plate instead.
-Generation = 6
+Abilities = REFRIGERATE
+HiddenAbilities = REFRIGERATE
+Height = 1.2
+Weight = 36.7
+Pokedex = Its claws can melt and extend at will, allowing it to have the tools needed for any job!
+Generation = 8
 #-------------------------------
-[LAPRAS,1]
-FormName = Mega Lapras
-MegaStone = LAPRASITE
-BaseStats = 130,85,105,75,125,115
+[GLISCOR,1]
+FormName = Mega Gliscor
+MegaStone = GLISCORITE
+BaseStats = 75,115,145,110,50,115
 BaseExp = 222
-Abilities = LIQUIDVOICE
-HiddenAbilities = LIQUIDVOICE
-Height = 3.1
-Weight = 283.8
-Pokedex = It can carry several people at once while maintaining focus on battle! Its songs put sailors into eternal sleep.
-Generation = 6
+Abilities = POISONHEAL
+HiddenAbilities = POISONHEAL
+Height = 2.1
+Weight = 45.8
+Pokedex = Attacks from a Mega Gliscor absorbs the life force of those unfortunate enough to be hit.
+Generation = 8
 #-------------------------------
-[SNORLAX,1]
-FormName = Mega Snorlax
-MegaStone = SNORLAXITE
-Types = NORMAL,GRASS
-BaseStats = 160,120,95,30,75,150
+[ROTOM,6]
+FormName = Mega Rotom
+MegaStone = ROTOMITE
+Types = ELECTRIC,GHOST
+BaseStats = 50,35,97,131,130,97
 BaseExp = 300
-Abilities = GRASSPELT
-HiddenAbilities = GRASSPELT
-Height = 6.6
-Weight = 1526.7
-Pokedex = Its body serves as a world to small Pokémon. It can sleep for thousands of years at a time.
+Abilities = ADAPTABILITY
+HiddenAbilities = ADAPTABILITY
+Height = 0.2
+Weight = 0.2
+Pokedex = It has been optimized to perform at is best in battles, Mega Rotom is the ultimate mega Pokémon. 
 #-------------------------------
 [GARBODOR,1]
 FormName = Mega Garbodor
@@ -2515,3 +2515,16 @@ Weight = 78.6
 Shape = MultiBody
 Pokedex = The terrifying power of Bookaspooka who came together is enough to wipe out civilization. They can send people it encounters straight to the afterlife.
 RaidRanks = 5
+#-------------------------------
+[MANAPHY,1]
+FormName = Royal Forme
+Types = WATER,FAIRY
+BaseStats = 100,75,120,80,105,120
+EVs = HP,3
+Abilities = RAINDISH
+Moves = 1,TAILGLOW,1,WATERGUN,9,CHARM,16,SUPERSONIC,24,BUBBLEBEAM,31,ACIDARMOR,39,WHIRLPOOL,46,WATERPULSE,54,AQUARING,61,DIVE,69,RAINDANCE,76,HEARTSWAP
+TutorMoves = ANCIENTPOWER,BLIZZARD,BOUNCE,BRINE,CALMMIND,CONFIDE,COVET,DAZZLINGGLEAM,DIVE,DOUBLETEAM,ENDURE,ENERGYBALL,FACADE,FLASH,FLING,FRUSTRATION,GIGAIMPACT,GRASSKNOT,HAIL,HEALBELL,HELPINGHAND,HIDDENPOWER,HYPERBEAM,ICEBEAM,ICYWIND,KNOCKOFF,LASTRESORT,LIGHTSCREEN,LIQUIDATION,MIMIC,MUDSLAP,NATURALGIFT,PROTECT,PSYCHIC,PSYCHUP,RAINDANCE,REFLECT,REST,RETURN,ROUND,SAFEGUARD,SCALD,SECRETPOWER,SHADOWBALL,SIGNALBEAM,SKILLSWAP,SLEEPTALK,SNORE,SUBSTITUTE,SURF,SWAGGER,SWIFT,UPROAR,UTURN,WATERFALL,WATERPULSE,WHIRLPOOL
+Height = 0.3
+Weight = 1.4
+RaidRanks = 6
+
