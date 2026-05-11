@@ -2505,3 +2505,13 @@ WildItemUncommon = ABSORBBULB
 Evolutions = PETALHARE,Item,ICESTONE
 Flags = InheritFormWithEverStone
 RaidRanks = 2,3
+#-------------------------------
+[BOOKASPOOKA,1]
+FormName = Haunting Form
+BaseStats = 20,160,80,120,160,80
+BaseExp = 217
+Height = 8.2
+Weight = 78.6
+Shape = MultiBody
+Pokedex = The terrifying power of Bookaspooka who came together is enough to wipe out civilization. They can send people it encounters straight to the afterlife.
+RaidRanks = 5

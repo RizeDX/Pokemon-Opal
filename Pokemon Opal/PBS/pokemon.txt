@@ -24362,4 +24362,29 @@ Pokedex = The kicks from a Petalhare can knock out fully grown adults. They have
 Generation = 8
 WildItemUncommon = ABSORBBULB
 RaidRanks = 3,4,5
-
+#-------------------------------
+[BOOKASPOOKA]
+Name = Bookaspooka
+FormName = Ghast Form
+Types = GHOST
+BaseStats = 20,30,10,75,30,10
+GenderRatio = Female50Percent
+GrowthRate = Fast
+BaseExp = 61
+EVs = SPEED,1
+CatchRate = 60
+Happiness = 50
+Abilities = HAUNTING
+Moves = 1,WATERGUN,1,GROWL,4,HELPINGHAND,8,BEATUP,12,BRINE,16,TEARFULLOOK,20,DIVE,24,SOAK,28,UPROAR,32,AQUATAIL,36,AQUARING,40,ENDEAVOR,44,HYDROPUMP,48,DOUBLEEDGE
+TutorMoves = AQUATAIL,ATTRACT,BEATUP,BRINE,BULLDOZE,CAPTIVATE,CONFIDE,COVET,DIVE,DOUBLETEAM,EARTHQUAKE,ENDEAVOR,ENDURE,FACADE,FLIPTURN,FRUSTRATION,HAIL,HELPINGHAND,HIDDENPOWER,HYDROPUMP,ICEBEAM,IRONTAIL,LIQUIDATION,MIMIC,MUDDYWATER,MUDSHOT,NATURALGIFT,PROTECT,RAINDANCE,REST,RETURN,ROUND,SCALD,SCALESHOT,SECRETPOWER,SLEEPTALK,SNORE,SUBSTITUTE,SURF,SWAGGER,TOXIC,UPROAR,UTURN,WATERFALL,WATERPULSE,WHIRLPOOL
+EggMoves = MIST,TAKEDOWN,WATERPULSE
+EggGroups = Water2
+HatchSteps = 3840
+Height = 0.2
+Weight = 0.3
+Color = White
+Shape = Finned
+Category = Small Fry
+Pokedex = They are awfully kind to those they meet. However, if a bunch of them get together, run.
+Generation = 8
+RaidRanks = 1
