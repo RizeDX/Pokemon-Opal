@@ -13278,6 +13278,7 @@ Category = Sea Drifter
 Pokedex = A Pokémon that lives in warm seas. It inflates the flotation sac on its head to drift and search for food.
 Generation = 4
 Flags = Mythical
+Evolutions = PHIOMATA,Level,40
 #-------------------------------
 [MANAPHY]
 Name = Manaphy
@@ -24468,4 +24469,28 @@ Category = Slime
 Pokedex = It can absorb small structures and digest them. Sometimes, Pokeballs will be deflected due to its body composition.
 Generation = 8
 RaidRanks = 5
+#-------------------------------
+[PHIOMATA]
+Name = Phiomata
+Types = WATER
+BaseStats = 80,80,80,80,80,80
+GenderRatio = Genderless
+GrowthRate = Slow
+BaseExp = 300
+EVs = HP,2
+CatchRate = 30
+Happiness = 50
+Abilities = HYDRATION
+Moves = 1,WATERGUN,9,CHARM,16,SUPERSONIC,24,BUBBLEBEAM,31,ACIDARMOR,39,WHIRLPOOL,46,WATERPULSE,54,AQUARING,61,DIVE,69,RAINDANCE
+TutorMoves = ANCIENTPOWER,BLIZZARD,BOUNCE,BRINE,CONFIDE,COVET,DAZZLINGGLEAM,DIVE,DOUBLETEAM,ENDURE,FACADE,FLING,FRUSTRATION,GRASSKNOT,HAIL,HEALBELL,HELPINGHAND,HIDDENPOWER,ICEBEAM,ICYWIND,KNOCKOFF,LASTRESORT,LIQUIDATION,MIMIC,MUDSLAP,NATURALGIFT,PROTECT,PSYCHUP,RAINDANCE,REST,RETURN,ROUND,SAFEGUARD,SCALD,SECRETPOWER,SIGNALBEAM,SLEEPTALK,SNORE,SUBSTITUTE,SURF,SWAGGER,SWIFT,UPROAR,UTURN,WATERFALL,WATERPULSE,WHIRLPOOL
+EggGroups = Water1,Fairy
+HatchSteps = 10240
+Height = 0.8
+Weight = 6.2
+Color = Blue
+Shape = HeadArms
+Category = Sea Drifter
+Pokedex = It protects Manaphy until the end of its life. It can manifest water to use as weaponry.
+Generation = 8
+Flags = Mythical
 
