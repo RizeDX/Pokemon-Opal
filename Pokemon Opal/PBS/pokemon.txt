@@ -24149,7 +24149,7 @@ Shape = BipedalTail
 Category = Snake
 Pokedex = Often curious about the world around them, Orblet makes for wonderful companions for trainers starting on their journey!
 Generation = 8
-Evolutions = FLAMAGE,Level,17
+Evolutions = INTUIHISS,Level,17
 RaidRanks = 1,2
 #-------------------------------
 [INTUIHISS]
