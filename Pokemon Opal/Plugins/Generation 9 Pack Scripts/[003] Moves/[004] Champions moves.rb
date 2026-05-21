@@ -78,16 +78,10 @@ end
 # Synthesis)
 #===============================================================================
 class Battle::Move::HealUserDependingOnWeather < Battle::Move::HealingMove
+  alias megasol_pbOnStartUse pbOnStartUse
   def pbOnStartUse(user, targets)
+    megasol_pbOnStartUse(user, targets)
     @healAmount = (user.totalhp * 2 / 3.0).round if user.hasActiveAbility?(:MEGASOL)
-    case user.effectiveWeather
-    when :Sun, :HarshSun
-      @healAmount = (user.totalhp * 2 / 3.0).round
-    when :None, :StrongWinds
-      @healAmount = (user.totalhp / 2.0).round
-    else
-      @healAmount = (user.totalhp / 4.0).round
-    end
   end
 end
 

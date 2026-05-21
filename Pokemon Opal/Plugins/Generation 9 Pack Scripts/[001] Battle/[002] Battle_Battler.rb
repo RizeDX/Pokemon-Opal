@@ -551,12 +551,144 @@ class Battle::Battler
   #-----------------------------------------------------------------------------
   # -Aliased to add Silk Trap to move success check.
   # -Rechecks for effects that ignore abilities before running success check.
+  # -Checks for protection effects from Unseen Fist and Piercing Drill ability
   #-----------------------------------------------------------------------------
   alias paldea_pbSuccessCheckAgainstTarget pbSuccessCheckAgainstTarget
   def pbSuccessCheckAgainstTarget(move, user, target, targets)
     @battle.moldBreaker = user.hasMoldBreaker? || (move.statusMove? && user.hasActiveAbility?(:MYCELIUMMIGHT)) if !@battle.moldBreaker
     @battle.moldBreaker = false if target.hasActiveItem?(:ABILITYSHIELD)
-    if !(user.hasActiveAbility?(:UNSEENFIST) && move.contactMove?)
+    show_message = move.pbShowFailMessages?(targets)
+    typeMod = move.pbCalcTypeMod(move.calcType, user, target)
+    target.damageState.typeMod = typeMod
+    # Two-turn attacks can't fail here in the charging turn
+    return true if user.effects[PBEffects::TwoTurnAttack]
+    # Move-specific failures
+    if move.pbFailsAgainstTarget?(user, target, show_message)
+      PBDebug.log(sprintf("[Move failed] In function code %s's def pbFailsAgainstTarget?", move.function_code))
+      return false
+    end
+    # Immunity to priority moves because of Psychic Terrain
+    if @battle.field.terrain == :Psychic && target.affectedByTerrain? && target.opposes?(user) &&
+       @battle.choices[user.index][4] > 0   # Move priority saved from pbCalculatePriority
+      @battle.pbDisplay(_INTL("{1} surrounds itself with psychic terrain!", target.pbThis)) if show_message
+      return false
+    end
+    # Crafty Shield
+    if target.pbOwnSide.effects[PBEffects::CraftyShield] && user.index != target.index &&
+       move.statusMove? && !move.pbTarget(user).targets_all
+      if show_message
+        @battle.pbCommonAnimation("CraftyShield", target)
+        @battle.pbDisplay(_INTL("Crafty Shield protected {1}!", target.pbThis(true)))
+      end
+      target.damageState.protected = true
+      @battle.successStates[user.index].protected = true
+      return false
+    end
+    if !(user.hasActiveAbility?([:UNSEENFIST, :PIERCINGDRILL]) && 
+         move.contactMove? && !Settings::CHAMPIONS_MECHANICS)
+      bypass_protection = user.hasActiveAbility?([:UNSEENFIST, :PIERCINGDRILL]) && 
+                          move.contactMove? && Settings::CHAMPIONS_MECHANICS
+      # Wide Guard
+      if target.pbOwnSide.effects[PBEffects::WideGuard] && user.index != target.index &&
+         move.pbTarget(user).num_targets > 1 &&
+         (Settings::MECHANICS_GENERATION >= 7 || move.damagingMove?)
+        if show_message
+          @battle.pbCommonAnimation("WideGuard", target)
+          @battle.pbDisplay(_INTL("Wide Guard protected {1}!", target.pbThis(true)))
+        end
+        target.damageState.protected = true
+        @battle.successStates[user.index].protected = true
+        return bypass_protection
+      end
+      if move.canProtectAgainst?
+        # Quick Guard
+        if target.pbOwnSide.effects[PBEffects::QuickGuard] &&
+           @battle.choices[user.index][4] > 0   # Move priority saved from pbCalculatePriority
+          if show_message
+            @battle.pbCommonAnimation("QuickGuard", target)
+            @battle.pbDisplay(_INTL("Quick Guard protected {1}!", target.pbThis(true)))
+          end
+          target.damageState.protected = true
+          @battle.successStates[user.index].protected = true
+          return bypass_protection
+        end
+        # Protect
+        if target.effects[PBEffects::Protect]
+          if show_message
+            @battle.pbCommonAnimation("Protect", target)
+            @battle.pbDisplay(_INTL("{1} protected itself!", target.pbThis))
+          end
+          target.damageState.protected = true
+          @battle.successStates[user.index].protected = true
+          return bypass_protection
+        end
+        # King's Shield
+        if target.effects[PBEffects::KingsShield] && move.damagingMove?
+          if show_message
+            @battle.pbCommonAnimation("KingsShield", target)
+            @battle.pbDisplay(_INTL("{1} protected itself!", target.pbThis))
+          end
+          target.damageState.protected = true
+          @battle.successStates[user.index].protected = true
+          if move.pbContactMove?(user) && user.affectedByContactEffect? &&
+             user.pbCanLowerStatStage?(:ATTACK, target)
+            user.pbLowerStatStage(:ATTACK, (Settings::MECHANICS_GENERATION >= 8) ? 1 : 2, target)
+          end
+          return bypass_protection
+        end
+        # Spiky Shield
+        if target.effects[PBEffects::SpikyShield]
+          if show_message
+            @battle.pbCommonAnimation("SpikyShield", target)
+            @battle.pbDisplay(_INTL("{1} protected itself!", target.pbThis))
+          end
+          target.damageState.protected = true
+          @battle.successStates[user.index].protected = true
+          if move.pbContactMove?(user) && user.affectedByContactEffect? && user.takesIndirectDamage?
+            @battle.scene.pbDamageAnimation(user)
+            user.pbReduceHP(user.totalhp / 8, false)
+            @battle.pbDisplay(_INTL("{1} was hurt!", user.pbThis))
+            user.pbItemHPHealCheck
+          end
+          return bypass_protection
+        end
+        # Baneful Bunker
+        if target.effects[PBEffects::BanefulBunker]
+          if show_message
+            @battle.pbCommonAnimation("BanefulBunker", target)
+            @battle.pbDisplay(_INTL("{1} protected itself!", target.pbThis))
+          end
+          target.damageState.protected = true
+          @battle.successStates[user.index].protected = true
+          if move.pbContactMove?(user) && user.affectedByContactEffect? &&
+             user.pbCanPoison?(target, false)
+            user.pbPoison(target)
+          end
+          return bypass_protection
+        end
+        # Obstruct
+        if target.effects[PBEffects::Obstruct] && move.damagingMove?
+          if show_message
+            @battle.pbCommonAnimation("Obstruct", target)
+            @battle.pbDisplay(_INTL("{1} protected itself!", target.pbThis))
+          end
+          target.damageState.protected = true
+          @battle.successStates[user.index].protected = true
+          if move.pbContactMove?(user) && user.affectedByContactEffect? &&
+             user.pbCanLowerStatStage?(:DEFENSE, target)
+            user.pbLowerStatStage(:DEFENSE, 2, target)
+          end
+          return bypass_protection
+        end
+        # Mat Block
+        if target.pbOwnSide.effects[PBEffects::MatBlock] && move.damagingMove?
+          # NOTE: Confirmed no common animation for this effect.
+          @battle.pbDisplay(_INTL("{1} was blocked by the kicked-up mat!", move.name)) if show_message
+          target.damageState.protected = true
+          @battle.successStates[user.index].protected = true
+          return bypass_protection
+        end
+      end
       if move.canProtectAgainst? && !user.effects[PBEffects::TwoTurnAttack]
         # Silk Trap
         if target.effects[PBEffects::SilkTrap] && move.damagingMove?
@@ -570,7 +702,7 @@ class Battle::Battler
              user.pbCanLowerStatStage?(:SPEED, target)
             user.pbLowerStatStage(:SPEED, 1, target)
           end
-          return false
+          return bypass_protection
         end
         # Burning Bulwark
         if target.effects[PBEffects::BurningBulwark] && move.damagingMove?
@@ -584,7 +716,7 @@ class Battle::Battler
              user.pbCanBurn?(target, false)
             user.pbBurn(target)
           end
-          return false
+          return bypass_protection
         end
       end
     end

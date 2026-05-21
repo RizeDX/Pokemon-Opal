@@ -17,7 +17,7 @@ module Settings
   # status is doubled if a move is capable of inflicting Frostbite. Pokemon with
   # the Drowsy status are also twice as likely to be unable to act each turn.
   #-----------------------------------------------------------------------------
-  HAIL_WEATHER_TYPE = 1
+  HAIL_WEATHER_TYPE = 2
   
   
   #=============================================================================
@@ -28,12 +28,12 @@ module Settings
   # treated as separate status conditions.
   #-----------------------------------------------------------------------------
   SLEEP_EFFECTS_CAUSE_DROWSY     = false
-  FREEZE_EFFECTS_CAUSE_FROSTBITE = false
+  FREEZE_EFFECTS_CAUSE_FROSTBITE = true
   #-----------------------------------------------------------------------------
   # When true, Sleep can be cured by getting hit from electrocute moves.
   # (Spark, Volt Tackle, and Wild Charge)
   #-----------------------------------------------------------------------------
-  ELECTROCUTE_MOVES_CURE_SLEEP = false
+  ELECTROCUTE_MOVES_CURE_SLEEP = true
   
 
   #=============================================================================
@@ -41,7 +41,7 @@ module Settings
   #=============================================================================
   # When true, hidden move type determined similar to Judgement with Legend Plate.
   #-----------------------------------------------------------------------------
-  HIDDEN_POWER_USE_PLA_MECHANICS = false
+  HIDDEN_POWER_USE_PLA_MECHANICS = true
   
 
   #=============================================================================
@@ -87,5 +87,5 @@ module Settings
   # -Salt Cure inflicted 1/16 or 1/8 (water and/or steel-type) of its maximum HP at the end of each turn
   # -Change the total PP of each moves to 8, 12, 16, or 20
   #-----------------------------------------------------------------------------
-  CHAMPIONS_MECHANICS = false
+  CHAMPIONS_MECHANICS = true
 end

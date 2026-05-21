@@ -37,7 +37,6 @@ Battle::AbilityEffects::EndOfRoundHealing.add(:HEALER,
   }
 )
 
-
 #===============================================================================
 # Unseen Fist
 #===============================================================================
@@ -63,7 +62,7 @@ Battle::AbilityEffects::DamageCalcFromUser.add(:UNSEENFIST,
 Battle::AbilityEffects::OnDealingHit.add(:UNSEENFIST,
   proc { |ability, user, target, move, battle|
     next if !Settings::CHAMPIONS_MECHANICS
-    next if !move.pbContactMove?
+    next if !move.pbContactMove?(user)
     next if !target.effects[PBEffects::BurningBulwark]         &&
             !target.effects[PBEffects::BanefulBunker]          &&
             !target.effects[PBEffects::KingsShield]            &&
@@ -80,6 +79,23 @@ Battle::AbilityEffects::OnDealingHit.add(:UNSEENFIST,
   }
 )
 
+#===============================================================================
+# Sand Veil
+#===============================================================================
+# Battle::AbilityEffects::AccuracyCalcFromTarget.add(:SANDVEIL,
+#   proc { |ability, mods, user, target, move, type|
+#     mods[:evasion_multiplier] *= 1.25 if target.effectiveWeather == :Sandstorm && !user.hasActiveAbility?(:MEGASOL)
+#   }
+# )
+
+#===============================================================================
+# Snow Cloak
+#===============================================================================
+# Battle::AbilityEffects::AccuracyCalcFromTarget.add(:SNOWCLOAK,
+#   proc { |ability, mods, user, target, move, type|
+#     mods[:evasion_multiplier] *= 1.25 if target.effectiveWeather == :Hail && !user.hasActiveAbility?(:MEGASOL)
+#   }
+# )
 ################################################################################
 # NEW ABILITIES
 ################################################################################

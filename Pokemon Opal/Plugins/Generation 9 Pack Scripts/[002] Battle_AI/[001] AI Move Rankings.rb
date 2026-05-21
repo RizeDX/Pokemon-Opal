@@ -482,7 +482,7 @@ Battle::AI::Handlers::MoveEffectScore.add("ProtectUser",
     ai.each_foe_battler(user.side) do |b, i|
       next if !b.can_attack?
       next if !b.check_for_move { |m| m.canProtectAgainst? }
-      next if b.has_active_ability?(:UNSEENFIST) && b.check_for_move { |m| m.contactMove? }
+      next if b.has_active_ability?(:UNSEENFIST) && b.check_for_move { |m| m.contactMove? } && !Settings::CHAMPIONS_MECHANICS
       useless = false
       # General preference
       score += 7
@@ -529,7 +529,7 @@ Battle::AI::Handlers::MoveEffectScore.add("ProtectUserBanefulBunker",
     ai.each_foe_battler(user.side) do |b, i|
       next if !b.can_attack?
       next if !b.check_for_move { |m| m.canProtectAgainst? }
-      next if b.has_active_ability?(:UNSEENFIST) && b.check_for_move { |m| m.contactMove? }
+      next if b.has_active_ability?(:UNSEENFIST) && b.check_for_move { |m| m.contactMove? } && !Settings::CHAMPIONS_MECHANICS
       useless = false
       # General preference
       score += 7
@@ -584,7 +584,7 @@ Battle::AI::Handlers::MoveEffectScore.add("ProtectUserFromDamagingMovesKingsShie
     ai.each_foe_battler(user.side) do |b, i|
       next if !b.can_attack?
       next if !b.check_for_move { |m| m.damagingMove? && m.canProtectAgainst? }
-      next if b.has_active_ability?(:UNSEENFIST) && b.check_for_move { |m| m.contactMove? }
+      next if b.has_active_ability?(:UNSEENFIST) && b.check_for_move { |m| m.contactMove? } && !Settings::CHAMPIONS_MECHANICS
       useless = false
       # General preference
       score += 7
@@ -640,7 +640,7 @@ Battle::AI::Handlers::MoveEffectScore.add("ProtectUserFromDamagingMovesObstruct"
     ai.each_foe_battler(user.side) do |b, i|
       next if !b.can_attack?
       next if !b.check_for_move { |m| m.damagingMove? && m.canProtectAgainst? }
-      next if b.has_active_ability?(:UNSEENFIST) && b.check_for_move { |m| m.contactMove? }
+      next if b.has_active_ability?(:UNSEENFIST) && b.check_for_move { |m| m.contactMove? } && !Settings::CHAMPIONS_MECHANICS
       useless = false
       # General preference
       score += 7
@@ -692,7 +692,7 @@ Battle::AI::Handlers::MoveEffectScore.add("ProtectUserFromTargetingMovesSpikyShi
     ai.each_foe_battler(user.side) do |b, i|
       next if !b.can_attack?
       next if !b.check_for_move { |m| m.canProtectAgainst? }
-      next if b.has_active_ability?(:UNSEENFIST) && b.check_for_move { |m| m.contactMove? }
+      next if b.has_active_ability?(:UNSEENFIST) && b.check_for_move { |m| m.contactMove? } && !Settings::CHAMPIONS_MECHANICS
       useless = false
       # General preference
       score += 7
@@ -816,6 +816,50 @@ Battle::AI::Handlers::MoveEffectScore.add("ProtectUserSideFromMultiTargetDamagin
     next score
   }
 )
+
+#===============================================================================
+#
+#===============================================================================
+Battle::AI::Handlers::MoveEffectScore.add("ProtectUserSideFromDamagingMovesIfUserFirstTurn",
+  proc { |score, move, user, ai, battle|
+    # Score changes for each foe
+    useless = true
+    ai.each_foe_battler(user.side) do |b, i|
+      next if !b.can_attack?
+      next if !b.check_for_move { |m| m.damagingMove? && m.canProtectAgainst? }
+      next if b.has_active_ability?(:UNSEENFIST) && b.check_for_move { |m| m.contactMove? } && !Settings::CHAMPIONS_MECHANICS
+      useless = false
+      # General preference
+      score += 7
+      # Prefer if the foe is in the middle of using a two turn attack
+      score += 15 if b.effects[PBEffects::TwoTurnAttack] &&
+                     GameData::Move.get(b.effects[PBEffects::TwoTurnAttack]).flags.any? { |f| f[/^CanProtect$/i] }
+      # Prefer if foe takes EOR damage, don't prefer if they have EOR healing
+      b_eor_damage = b.rough_end_of_round_damage
+      if b_eor_damage > 0
+        score += 8
+      elsif b_eor_damage < 0
+        score -= 8
+      end
+    end
+    next Battle::AI::MOVE_USELESS_SCORE if useless
+    # Prefer if the user has EOR healing, don't prefer if they take EOR damage
+    user_eor_damage = user.rough_end_of_round_damage
+    if user_eor_damage >= user.hp
+      next Battle::AI::MOVE_USELESS_SCORE
+    elsif user_eor_damage > 0
+      score -= 8
+    elsif user_eor_damage < 0
+      score += 8
+    end
+    # Prefer if the user used Glaive Rush last turn
+    score += 20 if user.effects[PBEffects::GlaiveRush] > 0
+    # Use it or lose it
+    score += 25
+    next score
+  }
+)
+
 #===============================================================================
 # Wake-Up Slap
 #===============================================================================

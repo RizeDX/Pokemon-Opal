@@ -18,7 +18,7 @@ class Battle::AI
     1  => [:EMBODYASPECT, :EMBODYASPECT_1, :EMBODYASPECT_2, :EMBODYASPECT_3,
            :TERASHIFT, :TERASHELL, :TERAFORMZERO
           ],
-    0  => [:PIERCINGDRILL],
+    0  => [:PIERCINGDRILL]
 
   }
 

@@ -291,12 +291,20 @@ class Battle::Move
     when "TypeDependsOnUserPlate",            # Judgement
          "TypeAndPowerDependOnWeather",       # Weather Ball
          "TypeDependsOnUserIVs",              # Hidden Power
+         "TypeAndPowerDependOnUserBerry",     # Natural Gift
+         "TypeDependsOnUserMemory",           # Multi-Attack
+         "TypeDependsOnUserDrive",            # Techno Blast
+         "TypeIsUserFirstType",               # Revelation Dance
+         "TypeAndPowerDependOnTerrain",       # Terrain Pulse
          "TypeIsUserSecondType",              # Ivy Cudgel
          "TypeIsUserSecondTypeRemoveScreens"  # Raging Bull
       return pbBaseType(battler)
-    else
-      return paldea_display_type(battler)
     end
+    # Ability
+    return pbBaseType(battler) if battler&.hasActiveAbility?([:AERILATE, :GALVANIZE, :PIXILATE,
+                                                              :REFRIGERATE, :LIQUIDVOICE, :NORMALIZE,
+                                                              :DRAGONIZE])
+    return paldea_display_type(battler)
   end
   
   #-----------------------------------------------------------------------------
@@ -390,8 +398,14 @@ class Battle::Move
       end
     when :Hail
       if Settings::HAIL_WEATHER_TYPE > 0 && target.pbHasType?(:ICE) && 
-         (physicalMove? || @function_code == "UseTargetDefenseInsteadOfTargetSpDef")
+         (physicalMove? || @function_code == "UseTargetDefenseInsteadOfTargetSpDef") && !user.hasActiveAbility?(:MEGASOL)
         multipliers[:defense_multiplier] *= 1.5
+      end
+    when :Sandstorm
+      # Mega Sol ability negate sp. def boost to Rock-type during Sandstorm
+      if target.pbHasType?(:ROCK) && specialMove? && @function_code != "UseTargetDefenseInsteadOfTargetSpDef" &&
+         user.hasActiveAbility?(:MEGASOL)
+        multipliers[:defense_multiplier] /= 1.5
       end
     end
     # Frostbite
@@ -404,13 +418,14 @@ class Battle::Move
     end
     # Glaive Rush
     multipliers[:final_damage_multiplier] *= 2 if target.effects[PBEffects::GlaiveRush] > 0
-    # Mega Sol
-    if user.hasActiveAbility?(:MEGASOL)
+    # Mega Sol (skip if its sunny)
+    if user.hasActiveAbility?(:MEGASOL) && ![:Sun, :HarshSun].include?(user.effectiveWeather)
+      # Negate boosted/lowered damage during rain
       case type
       when :FIRE
-        multipliers[:final_damage_multiplier] *= 1.5
+        multipliers[:final_damage_multiplier] *= [:Rain, :HeavyRain].include?(user.effectiveWeather) ? 3 : 1.5
       when :WATER
-        multipliers[:final_damage_multiplier] /= 2
+        multipliers[:final_damage_multiplier] /= [:Rain, :HeavyRain].include?(user.effectiveWeather) ? 3 : 2
       end
       if @function_code == "IncreasePowerInSunWeather"
         multipliers[:final_damage_multiplier] *= (type == :FIRE) ? 1 : (type == :WATER) ? 3 : 1.5
