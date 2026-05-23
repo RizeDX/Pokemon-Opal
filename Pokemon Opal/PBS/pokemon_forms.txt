@@ -2527,4 +2527,29 @@ TutorMoves = ANCIENTPOWER,BLIZZARD,BOUNCE,BRINE,CALMMIND,CONFIDE,COVET,DAZZLINGG
 Height = 0.3
 Weight = 1.4
 RaidRanks = 6
+#-------------------------------
+[BANETTE,2]
+FormName = Mega Banette Z
+MegaStone = BANETTEZITE
+Types = GHOST,PSYCHIC
+BaseStats = 64,129,65,151,83,63
+BaseExp = 284
+Abilities = SHARPNESS
+HiddenAbilities = SHARPNESS
+Height = 2.0
+Weight = 53.7
+Pokedex = It can bring others to a parallel world by dragging them with its big, sharp claws. This world is inside its box.
+Generation = 8
+#-------------------------------
+[VOLCARONA,1]
+FormName = Mega Volcarona
+MegaStone = VOLCARONITE
+BaseStats = 85,75,95,105,165,125
+BaseExp = 320
+Abilities = DROUGHT
+HiddenAbilities = DROUGHT
+Height = 2.7
+Weight = 174.1
+Pokedex = The crystal on its body can harness the power of the sun, amplifying it to such a degree that it can fry electronics around the globe with one strong fire blast.
+Generation = 8
 

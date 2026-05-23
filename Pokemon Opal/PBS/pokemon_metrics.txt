@@ -4849,8 +4849,8 @@ ShadowX = 0
 ShadowSize = 1
 #-------------------------------
 [HELIOLISK]
-BackSprite = 4,50
-FrontSprite = -11,16
+BackSprite = 4,4
+FrontSprite = 5,9
 ShadowX = 0
 ShadowSize = 2
 #-------------------------------
@@ -5215,8 +5215,8 @@ ShadowX = 0
 ShadowSize = 1
 #-------------------------------
 [WISHIWASHI,1]
-BackSprite = 0,58
-FrontSprite = 9,14
+BackSprite = 0,7
+FrontSprite = 9,-1
 ShadowX = 0
 ShadowSize = 3
 #-------------------------------
@@ -6239,3 +6239,57 @@ BackSprite = 3,50
 FrontSprite = 1,17
 ShadowX = 0
 ShadowSize = 1
+#-------------------------------
+[BOOKASPOOKA]
+BackSprite = 0,0
+FrontSprite = 0,0
+ShadowX = 0
+ShadowSize = 2
+#-------------------------------
+[DRACABYSS]
+BackSprite = 0,0
+FrontSprite = 0,0
+ShadowX = 0
+ShadowSize = 2
+#-------------------------------
+[IRONOMISSION]
+BackSprite = 0,0
+FrontSprite = 0,0
+ShadowX = 0
+ShadowSize = 2
+#-------------------------------
+[PEBBLITE]
+BackSprite = 0,0
+FrontSprite = 0,0
+ShadowX = 0
+ShadowSize = 2
+#-------------------------------
+[PETALHARE]
+BackSprite = 0,0
+FrontSprite = 0,0
+ShadowX = 0
+ShadowSize = 2
+#-------------------------------
+[TITANAGOO]
+BackSprite = 0,0
+FrontSprite = 0,0
+ShadowX = 0
+ShadowSize = 2
+#-------------------------------
+[TROJAHORSE]
+BackSprite = 0,0
+FrontSprite = 0,0
+ShadowX = 0
+ShadowSize = 2
+#-------------------------------
+[SERTERNITY]
+BackSprite = 0,0
+FrontSprite = 0,0
+ShadowX = 0
+ShadowSize = 2
+#-------------------------------
+[PHIOMATA]
+BackSprite = 0,0
+FrontSprite = 0,0
+ShadowX = 0
+ShadowSize = 2

@@ -6617,4 +6617,22 @@ Price = 0
 BPPrice = 50
 Flags = MegaStone,Fling_80
 Description = One of a variety of mysterious Mega Stones. Have Garbodor hold it, and it will be able to Mega Evolve.
+#-------------------------------
+[BANETTEZITE]
+Name = Banettezite
+NamePlural = Banettezite
+Pocket = 1
+Price = 0
+BPPrice = 50
+Flags = MegaStone,Fling_80
+Description = One of a variety of mysterious Mega Stones. Have Banette hold it, and it will be able to Mega Evolve.
+#-------------------------------
+[VOLCARONITE]
+Name = Volcaronite
+NamePlural = Volcaronites
+Pocket = 1
+Price = 0
+BPPrice = 50
+Flags = MegaStone,Fling_80
+Description = One of a variety of mysterious Mega Stones. Have Volcarona hold it, and it will be able to Mega Evolve.
 
