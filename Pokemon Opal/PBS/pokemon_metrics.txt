@@ -2527,8 +2527,8 @@ ShadowX = 0
 ShadowSize = 1
 #-------------------------------
 [KECLEON]
-BackSprite = 0,42
-FrontSprite = 2,24
+BackSprite = 0,0
+FrontSprite = 1,18
 ShadowX = 0
 ShadowSize = 1
 #-------------------------------
