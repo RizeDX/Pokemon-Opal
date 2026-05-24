@@ -465,6 +465,7 @@ Evolutions = MAROWAK,LevelNight,28
 [MAROWAK,1]
 FormName = Alolan
 Types = FIRE,GHOST
+BaseStats = 60,80,110,65,50,80
 Abilities = CURSEDBODY,LIGHTNINGROD
 HiddenAbilities = ROCKHEAD
 Moves = 1,GROWL,1,TAILWHIP,1,BONECLUB,1,FLAMEWHEEL,3,TAILWHIP,7,BONECLUB,11,FLAMEWHEEL,13,LEER,17,HEX,21,BONEMERANG,23,WILLOWISP,27,SHADOWBONE,33,THRASH,37,FLING,43,STOMPINGTANTRUM,49,ENDEAVOR,53,FLAREBLITZ,59,RETALIATE,65,BONERUSH
@@ -640,8 +641,8 @@ MegaStone = AMPHAROSITE
 Types = ELECTRIC,DRAGON
 BaseStats = 90,95,105,45,165,110
 BaseExp = 305
-Abilities = MOLDBREAKER
-HiddenAbilities = MOLDBREAKER
+Abilities = FLUFFY
+HiddenAbilities = FLUFFY
 Pokedex = Massive amounts of energy intensely stimulated Ampharos's cells, apparently awakening its long-sleeping dragon's blood.
 Generation = 6
 #-------------------------------
@@ -747,8 +748,8 @@ FormName = Mega Steelix
 MegaStone = STEELIXITE
 BaseStats = 75,125,230,30,55,95
 BaseExp = 214
-Abilities = SANDFORCE
-HiddenAbilities = SANDFORCE
+Abilities = EARTHEATER
+HiddenAbilities = EARTHEATER
 Height = 10.5
 Weight = 740.0
 Generation = 6
@@ -1001,7 +1002,8 @@ Generation = 6
 [ABSOL,1]
 FormName = Mega Absol
 MegaStone = ABSOLITE
-BaseStats = 65,150,60,115,115,60
+Types = DARK,FAIRY
+BaseStats = 65,100,70,130,130,70
 BaseExp = 198
 Abilities = MAGICBOUNCE
 HiddenAbilities = MAGICBOUNCE
@@ -1012,7 +1014,7 @@ Generation = 6
 [GLALIE,1]
 FormName = Mega Glalie
 MegaStone = GLALITITE
-BaseStats = 80,120,80,100,120,80
+BaseStats = 80,120,100,120,80,80
 BaseExp = 203
 Abilities = REFRIGERATE
 HiddenAbilities = REFRIGERATE
@@ -1131,7 +1133,7 @@ Color = Red
 [WORMADAM,1]
 FormName = Sandy Cloak
 Types = BUG,GROUND
-BaseStats = 60,79,105,36,59,85
+BaseStats = 70,79,110,36,59,90
 EVs = DEFENSE,2
 Moves = 0,QUIVERDANCE,1,SUCKERPUNCH,1,TACKLE,1,PROTECT,1,BUGBITE,10,PROTECT,15,BUGBITE,20,STRINGSHOT,23,CONFUSION,26,ROCKBLAST,29,HARDEN,32,PSYBEAM,35,INFESTATION,38,FLAIL,41,ATTRACT,44,PSYCHIC,47,FISSURE,50,BUGBUZZ
 TutorMoves = ALLYSWITCH,ATTRACT,BUGBITE,BUGBUZZ,BULLDOZE,CAPTIVATE,CONFIDE,DIG,DOUBLEEDGE,DOUBLETEAM,DREAMEATER,EARTHPOWER,EARTHQUAKE,ELECTROWEB,ENDEAVOR,ENDURE,FACADE,FLASH,FRUSTRATION,GIGADRAIN,GIGAIMPACT,HIDDENPOWER,HYPERBEAM,INFESTATION,MIMIC,MUDSLAP,NATURALGIFT,PROTECT,PSYCHIC,PSYCHUP,RAINDANCE,REST,RETURN,ROCKTOMB,ROUND,SAFEGUARD,SANDSTORM,SECRETPOWER,SHADOWBALL,SIGNALBEAM,SKILLSWAP,SLEEPTALK,SNORE,SOLARBEAM,STEALTHROCK,STRINGSHOT,STRUGGLEBUG,SUBSTITUTE,SUCKERPUNCH,SUNNYDAY,SWAGGER,TELEKINESIS,THIEF,UPROAR,VENOSHOCK
@@ -1141,7 +1143,7 @@ RaidRanks = 2,3
 [WORMADAM,2]
 FormName = Trash Cloak
 Types = BUG,STEEL
-BaseStats = 60,69,95,36,69,95
+BaseStats = 70,69,100,36,69,100
 EVs = DEFENSE,1,SPECIAL_DEFENSE,1
 Moves = 0,QUIVERDANCE,1,METALBURST,1,SUCKERPUNCH,1,TACKLE,1,PROTECT,1,BUGBITE,10,PROTECT,15,BUGBITE,20,STRINGSHOT,23,CONFUSION,26,METALBURST,29,METALSOUND,32,PSYBEAM,35,INFESTATION,38,FLAIL,41,ATTRACT,44,PSYCHIC,47,IRONHEAD,50,BUGBUZZ
 TutorMoves = ALLYSWITCH,ATTRACT,BUGBITE,BUGBUZZ,CAPTIVATE,CONFIDE,DIG,DOUBLEEDGE,DOUBLETEAM,DREAMEATER,ELECTROWEB,ENDEAVOR,ENDURE,FACADE,FLASH,FLASHCANNON,FRUSTRATION,GIGADRAIN,GIGAIMPACT,GUNKSHOT,GYROBALL,HIDDENPOWER,HYPERBEAM,INFESTATION,IRONDEFENSE,IRONHEAD,MAGNETRISE,MIMIC,NATURALGIFT,PROTECT,PSYCHIC,PSYCHUP,RAINDANCE,REST,RETURN,ROUND,SAFEGUARD,SECRETPOWER,SHADOWBALL,SIGNALBEAM,SKILLSWAP,SLEEPTALK,SNORE,SOLARBEAM,STEALTHROCK,STRINGSHOT,STRUGGLEBUG,SUBSTITUTE,SUCKERPUNCH,SUNNYDAY,SWAGGER,TELEKINESIS,THIEF,UPROAR,VENOSHOCK
@@ -1203,7 +1205,7 @@ Generation = 6
 [ABOMASNOW,1]
 FormName = Mega Abomasnow
 MegaStone = ABOMASITE
-BaseStats = 90,132,105,30,132,105
+BaseStats = 100,132,105,30,132,105
 BaseExp = 208
 HiddenAbilities = SNOWWARNING
 Height = 2.7
@@ -1215,8 +1217,8 @@ FormName = Mega Gallade
 MegaStone = GALLADITE
 BaseStats = 68,165,95,110,65,115
 BaseExp = 309
-Abilities = INNERFOCUS
-HiddenAbilities = INNERFOCUS
+Abilities = SHARPNESS
+HiddenAbilities = SHARPNESS
 Weight = 56.4
 Generation = 6
 #-------------------------------
@@ -1727,7 +1729,7 @@ Pokedex = Once upon a time, a king with an Aegislash reigned over the land. His 
 #-------------------------------
 [PUMPKABOO,1]
 FormName = Average Size
-BaseStats = 49,66,70,51,44,55
+BaseStats = 49,44,70,51,66,55
 HiddenAbilities = INSOMNIA
 Height = 0.4
 Weight = 5.0
@@ -1735,14 +1737,14 @@ Pokedex = Spirits that wander this world are placed into Pumpkaboo's body. They'
 #-------------------------------
 [PUMPKABOO,2]
 FormName = Large Size
-BaseStats = 54,66,70,46,44,55
+BaseStats = 54,44,70,46,66,55
 Height = 0.5
 Weight = 7.5
 Pokedex = When taking spirits to the afterlife, large Pumpkaboo prefer the spirits of adults to those of children.
 #-------------------------------
 [PUMPKABOO,3]
 FormName = Super Size
-BaseStats = 59,66,70,41,44,55
+BaseStats = 59,44,70,41,66,55
 HiddenAbilities = INSOMNIA
 Height = 0.8
 Weight = 15.0
@@ -1753,7 +1755,7 @@ WildItemRare = MIRACLESEED
 #-------------------------------
 [GOURGEIST,1]
 FormName = Average Size
-BaseStats = 65,90,122,84,58,75
+BaseStats = 65,58,122,84,90,75
 HiddenAbilities = INSOMNIA
 Height = 0.9
 Weight = 12.5
@@ -1761,14 +1763,14 @@ Pokedex = Eerie cries emanate from its body in the dead of night. The sounds are
 #-------------------------------
 [GOURGEIST,2]
 FormName = Large Size
-BaseStats = 75,95,122,69,58,75
+BaseStats = 75,58,122,69,95,75
 Height = 1.1
 Weight = 14.0
 Pokedex = Large Gourgeist put on the guise of adults, taking the hands of children to lead them to the afterlife.
 #-------------------------------
 [GOURGEIST,3]
 FormName = Super Size
-BaseStats = 85,100,122,54,58,75
+BaseStats = 85,58,122,54,100,75
 HiddenAbilities = INSOMNIA
 Height = 1.7
 Weight = 39.0
