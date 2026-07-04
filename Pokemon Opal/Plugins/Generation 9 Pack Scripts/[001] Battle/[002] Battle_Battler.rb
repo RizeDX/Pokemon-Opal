@@ -288,10 +288,12 @@ class Battle::Battler
 
   #-----------------------------------------------------------------------------
   # - Edited to added Piercing drill ability
+  # - Edited to added Eelevate ability
   #-----------------------------------------------------------------------------
   alias champion_hasActiveAbility? hasActiveAbility?
   def hasActiveAbility?(check_ability, ignore_fainted = false)
     check_ability = [:UNSEENFIST, :PIERCINGDRILL] if !check_ability.is_a?(Array) && check_ability == :UNSEENFIST
+    check_ability = [:LEVITATE, :EELEVATE] if !check_ability.is_a?(Array) && check_ability == :LEVITATE
     return champion_hasActiveAbility?(check_ability, ignore_fainted)
   end
 
@@ -536,14 +538,42 @@ class Battle::Battler
       end
       return false
     end
-    # Fake Out and First Impression
-    if Settings::CHAMPIONS_MECHANICS && @turnCount > (commandPhase ? 0 : 1) && 
-      ["FlinchTargetFailsIfNotUserFirstTurn", "FailsIfNotUserFirstTurn"].include?(move.function_code)
-      if showMessages
+    # Added unselectable moves
+    if Settings::CHAMPIONS_MECHANICS
+      can_use = true
+      msg = ""
+      # Fake Out and First Impression
+      if @turnCount > (commandPhase ? 0 : 1) && 
+         ["FlinchTargetFailsIfNotUserFirstTurn", "FailsIfNotUserFirstTurn"].include?(move.function_code)
         msg = _INTL("{1} can't use {2} in the later turn!", pbThis, move.name)
-        (commandPhase) ? @battle.pbDisplayPaused(msg) : @battle.pbDisplay(msg)
+        can_use = false
+      elsif move.function_code == "PowerDependsOnUserStockpile" && @effects[PBEffects::Stockpile] == 0
+        msg = _INTL("This move can't be used!", pbThis, move.name) if showMessages
+        can_use = false
+      elsif move.function_code == "UserLosesFireType" && !pbHasType?(:FIRE)
+        msg = _INTL("This move can't be used!", pbThis, move.name) if showMessages
+        can_use = false
+      elsif move.function_code == "UserLosesElectricType" && !pbHasType?(:ELECTRIC)
+        msg = _INTL("This move can't be used!", pbThis, move.name) if showMessages
+        can_use = false
+      elsif move.function_code == "FailsIfUserHasUnusedMove"
+        hasThisMove = false
+        hasOtherMoves = false
+        hasUnusedMoves = false
+        self.eachMove do |m|
+          hasThisMove    = true if m.id == @id
+          hasOtherMoves  = true if m.id != @id
+          hasUnusedMoves = true if m.id != @id && !user.movesUsed.include?(m.id)
+        end
+        if !hasThisMove || !hasOtherMoves || hasUnusedMoves
+          msg = _INTL("This move can't be used!", pbThis, move.name) if showMessages
+          can_use = false
+        end
       end
-      return false
+      if !can_use
+        (commandPhase) ? @battle.pbDisplayPaused(msg) : @battle.pbDisplay(msg) if showMessages
+        return false
+      end
     end
     return paldea_pbCanChooseMove?(move, commandPhase, showMessages, specialUsage)
   end

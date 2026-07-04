@@ -42,6 +42,10 @@ class Battle
     return @rage_hit_count[battler.index & 1][battler.pokemonIndex]
   end
   
+  def pbRageHitReset(battler)
+    return @rage_hit_count[battler.index & 1][battler.pokemonIndex] = 0
+  end
+  
   def pbAddFaintedAlly(idxBattler)
     idxBattler = idxBattler.index if idxBattler.respond_to?("index")
     @fainted_count[idxBattler & 1] += 1 if @fainted_count[idxBattler & 1] < 100
@@ -234,6 +238,16 @@ class Battle
     pkmn.heal_status
     displayname = (pbOwnedByPlayer?(idxBattler)) ? pkmn.name : _INTL("The opposing {1}", pkmn.name)
     pbDisplay(_INTL("{1} was revived and is ready to fight again!", displayname))
+  end
+
+  #-----------------------------------------------------------------------------
+  # Resets rage hit counter on switch out.
+  #-----------------------------------------------------------------------------
+  alias champions_pbRecallAndReplace pbRecallAndReplace
+  def pbRecallAndReplace(*args)
+    idxBattler = args[0]
+    pbRageHitReset(@battlers[idxBattler]) if Settings::CHAMPIONS_MECHANICS
+    champions_pbRecallAndReplace(*args)
   end
 end
 

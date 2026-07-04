@@ -505,14 +505,33 @@ class Battle::Battler
   #-----------------------------------------------------------------------------
   alias paldea_pbTryUseMove pbTryUseMove
   def pbTryUseMove(*args)
-    oldStatus = @status
-    @status = nil if Settings::CHAMPIONS_MECHANICS && [:SLEEP, :FROZEN, :PARALYSIS].include?(@status)
-    ret = paldea_pbTryUseMove(*args)
-    return false if !ret
+    choice, move, specialUsage, skipAccuracyCheck = args[0], args[1], args[2], args[3]
+    if !pbCanChooseMove?(move, false, true, specialUsage)
+      @lastMoveFailed = true
+      return false
+    end
+    # Check whether it's possible for self to do anything at all
+    if @effects[PBEffects::SkyDrop] >= 0   # Intentionally no message here
+      PBDebug.log("[Move failed] #{pbThis} can't use #{move.name} because of being Sky Dropped")
+      return false
+    end
+    if @effects[PBEffects::HyperBeam] > 0   # Intentionally before Truant
+      PBDebug.log("[Move failed] #{pbThis} is recharging after using #{move.name}")
+      @battle.pbDisplay(_INTL("{1} must recharge!", pbThis))
+      @effects[PBEffects::Truant] = !@effects[PBEffects::Truant] if hasActiveAbility?(:TRUANT)
+      return false
+    end
+    if choice[1] == -2   # Battle Palace
+      PBDebug.log("[Move failed] #{pbThis} can't act in the Battle Palace somehow")
+      @battle.pbDisplay(_INTL("{1} appears incapable of using its power!", pbThis))
+      return false
+    end
+    # Skip checking all applied effects that could make self fail doing something
+    return true if skipAccuracyCheck
+    
     # Update Champions
+    # Check Sleep and Frozen before the alias
     if Settings::CHAMPIONS_MECHANICS
-      @status = oldStatus
-      move = args[1]
       # Check status problems and continue their effects/cure them
       case @status
       when :SLEEP
@@ -544,14 +563,8 @@ class Battle::Battler
           end
         end
       end
-      # Paralysis
-      if @status == :PARALYSIS && @battle.pbRandom(100) < 12.5
-        pbContinueStatus
-        PBDebug.log("[Move failed] #{pbThis} is paralyzed")
-        @lastMoveFailed = true
-        return false
-      end
     end
+    # Check for Drowsy
     if @status == :DROWSY
       self.statusCount -= 1
       if @statusCount <= 0
@@ -565,6 +578,40 @@ class Battle::Battler
             return false
           end
         end
+      end
+    end
+    # Set the status to nil to skip the sleep and frozen check
+    # Set infatuation to 0 to skip the process
+    oldStatus = @status
+    oldAttract = @effects[PBEffects::Attract]
+    @status = nil if Settings::CHAMPIONS_MECHANICS && [:SLEEP, :FROZEN, :PARALYSIS].include?(@status)
+    @effects[PBEffects::Attract] = -1 if oldAttract >= 0
+    ret = paldea_pbTryUseMove(*args)
+    return false if !ret
+    # Update Champions
+    # Paralysis check
+    if Settings::CHAMPIONS_MECHANICS
+      # Restore the old status
+      @status = oldStatus
+      if @status == :PARALYSIS && @battle.pbRandom(100) < 12.5
+        pbContinueStatus
+        PBDebug.log("[Move failed] #{pbThis} is paralyzed")
+        @lastMoveFailed = true
+        return false
+      end
+    end
+    # Infatuation check
+    if oldAttract >= 0
+      # Restore the old infatuate counter
+      @effects[PBEffects::Attract] = oldAttract
+      @battle.pbCommonAnimation("Attract", self)
+      @battle.pbDisplay(_INTL("{1} is in love with {2}!", pbThis,
+                              @battle.battlers[@effects[PBEffects::Attract]].pbThis(true)))
+      if @battle.pbRandom(100) < 50
+        @battle.pbDisplay(_INTL("{1} is immobilized by love!", pbThis))
+        PBDebug.log("[Move failed] #{pbThis} is immobilized by love")
+        @lastMoveFailed = true
+        return false
       end
     end
     return true

@@ -24479,6 +24479,34 @@ Generation = 8
 WildItemUncommon = MIRACLESEED
 RaidRanks = 3,4
 #-------------------------------
+[CANDIPOD]
+Name = Candipod
+Types = POISON,FAIRY
+BaseStats = 95,35,140,15,60,135
+GenderRatio = Female50Percent
+GrowthRate = Medium
+BaseExp = 200
+EVs = SPECIAL_DEFENSE,2
+CatchRate = 125
+Happiness = 50
+Abilities = POISONPOINT,STAMINA
+HiddenAbilities = LIQUIDOOZE
+Moves = 1,ABSORB,1,GROWTH,1,STUNSPORE,5,POISONPOWDER,10,ECHOEDVOICE,14,MEGADRAIN,17,SYNTHESIS,22,UPROAR,29,GIGADRAIN,37,ENCORE,46,SOLARBEAM,54,SPORE,62,BOOMBURST
+TutorMoves = ATTRACT
+EggMoves = WOODHAMMER,WORRYSEED
+EggGroups = Amorphous
+HatchSteps = 5120
+Height = 0.5
+Weight = 19.8
+Color = Purple
+Shape = HeadBase
+Category = Candy Snail
+Pokedex = Their colorful shell resembles candy! However, never try to taste it, as its skin is covered in a toxic mucus.
+Generation = 8
+WildItemUncommon = RARECANDY
+RaidRanks = 3,4
+
+#-------------------------------
 [GASTROFONY]
 Name = Gastrofony
 Types = BUG,NORMAL
@@ -24486,7 +24514,7 @@ BaseStats = 85,55,115,15,125,95
 GenderRatio = Female50Percent
 GrowthRate = Medium
 BaseExp = 200
-EVs = SPECIAL_DEFENSE,2
+EVs = DEFENSE,2
 CatchRate = 125
 Happiness = 50
 Abilities = PUNKROCK,SHELLARMOR
@@ -24494,7 +24522,7 @@ HiddenAbilities = STAMINA
 Moves = 1,ABSORB,1,GROWTH,1,STUNSPORE,5,POISONPOWDER,10,ECHOEDVOICE,14,MEGADRAIN,17,SYNTHESIS,22,UPROAR,29,GIGADRAIN,37,ENCORE,46,SOLARBEAM,54,SPORE,62,BOOMBURST
 TutorMoves = ATTRACT
 EggMoves = WOODHAMMER,WORRYSEED
-EggGroups = Grass
+EggGroups = Bug
 HatchSteps = 5120
 Height = 0.5
 Weight = 19.8
