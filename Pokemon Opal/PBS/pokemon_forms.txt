@@ -2,7 +2,7 @@
 #-------------------------------
 [VENUSAUR,1]
 FormName = Mega Venusaur
-MegaStone = VENUSAURITE
+MegaStone = MEGAITE
 BaseStats = 80,100,123,80,122,120
 BaseExp = 313
 Abilities = THICKFAT
@@ -14,7 +14,7 @@ Generation = 6
 #-------------------------------
 [CHARIZARD,1]
 FormName = Mega Charizard X
-MegaStone = CHARIZARDITEX
+MegaStone = MEGAITEX
 Types = FIRE,DRAGON
 BaseStats = 78,130,111,100,130,85
 BaseExp = 317
@@ -27,7 +27,7 @@ Generation = 6
 #-------------------------------
 [CHARIZARD,2]
 FormName = Mega Charizard Y
-MegaStone = CHARIZARDITEY
+MegaStone = MEGAITEY
 BaseStats = 78,104,78,100,159,115
 BaseExp = 317
 Abilities = DROUGHT
@@ -38,7 +38,7 @@ Generation = 6
 #-------------------------------
 [BLASTOISE,1]
 FormName = Mega Blastoise
-MegaStone = BLASTOISINITE
+MegaStone = MEGAITE
 BaseStats = 79,103,120,78,135,115
 BaseExp = 315
 Abilities = MEGALAUNCHER
@@ -49,7 +49,7 @@ Generation = 6
 #-------------------------------
 [BEEDRILL,1]
 FormName = Mega Beedrill
-MegaStone = BEEDRILLITE
+MegaStone = MEGAITE
 BaseStats = 65,150,40,145,15,80
 BaseExp = 284
 Abilities = ADAPTABILITY
@@ -61,7 +61,7 @@ Generation = 6
 #-------------------------------
 [PIDGEOT,1]
 FormName = Mega Pidgeot
-MegaStone = PIDGEOTITE
+MegaStone = MEGAITE
 BaseStats = 83,80,80,121,135,80
 BaseExp = 290
 Abilities = NOGUARD
@@ -261,7 +261,7 @@ RaidRanks = 3,4
 #-------------------------------
 [ALAKAZAM,1]
 FormName = Mega Alakazam
-MegaStone = ALAKAZITE
+MegaStone = MEGAITE
 BaseStats = 55,50,65,150,175,105
 BaseExp = 300
 Abilities = TRACE
@@ -375,7 +375,7 @@ RaidRanks = 3,4,5
 #-------------------------------
 [SLOWBRO,2]
 FormName = Mega Slowbro
-MegaStone = SLOWBRONITE
+MegaStone = MEGAITE
 BaseStats = 95,75,180,30,130,80
 BaseExp = 207
 Abilities = SHELLARMOR
@@ -436,7 +436,7 @@ RaidRanks = 3,4,5
 #-------------------------------
 [GENGAR,1]
 FormName = Mega Gengar
-MegaStone = GENGARITE
+MegaStone = MEGAITE
 BaseStats = 60,65,80,130,170,95
 BaseExp = 300
 Abilities = SHADOWTAG
@@ -492,7 +492,7 @@ RaidRanks = 3,4,5
 #-------------------------------
 [KANGASKHAN,1]
 FormName = Mega Kangaskhan
-MegaStone = KANGASKHANITE
+MegaStone = MEGAITE
 BaseStats = 105,125,100,100,60,100
 BaseExp = 207
 Abilities = PARENTALBOND
@@ -522,7 +522,7 @@ RaidRanks = 3,4
 #-------------------------------
 [PINSIR,1]
 FormName = Mega Pinsir
-MegaStone = PINSIRITE
+MegaStone = MEGAITE
 Types = BUG,FLYING
 BaseStats = 65,155,120,105,65,90
 BaseExp = 210
@@ -536,7 +536,7 @@ Generation = 6
 #-------------------------------
 [GYARADOS,1]
 FormName = Mega Gyarados
-MegaStone = GYARADOSITE
+MegaStone = MEGAITE
 Types = WATER,DARK
 BaseStats = 95,155,109,81,70,130
 BaseExp = 224
@@ -548,7 +548,7 @@ Generation = 6
 #-------------------------------
 [AERODACTYL,1]
 FormName = Mega Aerodactyl
-MegaStone = AERODACTYLITE
+MegaStone = MEGAITE
 BaseStats = 80,135,85,150,70,95
 BaseExp = 215
 Abilities = TOUGHCLAWS
@@ -607,7 +607,7 @@ RaidRanks = 6
 #-------------------------------
 [MEWTWO,1]
 FormName = Mega Mewtwo X
-MegaStone = MEWTWONITEX
+MegaStone = MEGAITEX
 Types = PSYCHIC,FIGHTING
 BaseStats = 106,190,100,130,154,100
 BaseExp = 390
@@ -620,7 +620,7 @@ Generation = 6
 #-------------------------------
 [MEWTWO,2]
 FormName = Mega Mewtwo Y
-MegaStone = MEWTWONITEY
+MegaStone = MEGAITEY
 BaseStats = 106,150,70,140,194,120
 BaseExp = 390
 Abilities = INSOMNIA
@@ -637,7 +637,7 @@ Evolutions = PIKACHU,None,
 #-------------------------------
 [AMPHAROS,1]
 FormName = Mega Ampharos
-MegaStone = AMPHAROSITE
+MegaStone = MEGAITE
 Types = ELECTRIC,DRAGON
 BaseStats = 90,95,105,45,165,110
 BaseExp = 305
@@ -745,7 +745,7 @@ Generation = 3
 #-------------------------------
 [STEELIX,1]
 FormName = Mega Steelix
-MegaStone = STEELIXITE
+MegaStone = MEGAITE
 BaseStats = 75,125,230,30,55,95
 BaseExp = 214
 Abilities = EARTHEATER
@@ -756,7 +756,7 @@ Generation = 6
 #-------------------------------
 [SCIZOR,1]
 FormName = Mega Scizor
-MegaStone = SCIZORITE
+MegaStone = MEGAITE
 BaseStats = 70,150,140,65,100,75
 BaseExp = 210
 Abilities = TECHNICIAN
@@ -768,7 +768,7 @@ Generation = 6
 #-------------------------------
 [HERACROSS,1]
 FormName = Mega Heracross
-MegaStone = HERACRONITE
+MegaStone = MEGAITE
 BaseStats = 80,185,115,75,40,105
 BaseExp = 210
 Abilities = SKILLLINK
@@ -797,7 +797,7 @@ RaidRanks = 2,3
 #-------------------------------
 [HOUNDOOM,1]
 FormName = Mega Houndoom
-MegaStone = HOUNDOOMINITE
+MegaStone = MEGAITE
 BaseStats = 75,90,90,115,140,90
 BaseExp = 210
 Abilities = SOLARPOWER
@@ -809,7 +809,7 @@ Generation = 6
 #-------------------------------
 [TYRANITAR,1]
 FormName = Mega Tyranitar
-MegaStone = TYRANITARITE
+MegaStone = MEGAITE
 BaseStats = 100,164,150,71,95,120
 BaseExp = 350
 HiddenAbilities = SANDSTREAM
@@ -820,7 +820,7 @@ Generation = 6
 #-------------------------------
 [SCEPTILE,1]
 FormName = Mega Sceptile
-MegaStone = SCEPTILITE
+MegaStone = MEGAITE
 Types = GRASS,DRAGON
 BaseStats = 70,110,75,145,145,85
 BaseExp = 315
@@ -832,7 +832,7 @@ Generation = 6
 #-------------------------------
 [BLAZIKEN,1]
 FormName = Mega Blaziken
-MegaStone = BLAZIKENITE
+MegaStone = MEGAITE
 BaseStats = 80,160,80,100,130,80
 BaseExp = 315
 Abilities = SPEEDBOOST
@@ -840,7 +840,7 @@ Generation = 6
 #-------------------------------
 [SWAMPERT,1]
 FormName = Mega Swampert
-MegaStone = SWAMPERTITE
+MegaStone = MEGAITE
 BaseStats = 100,150,110,70,95,110
 BaseExp = 318
 Abilities = SWIFTSWIM
@@ -874,7 +874,7 @@ RaidRanks = 2,3
 #-------------------------------
 [GARDEVOIR,1]
 FormName = Mega Gardevoir
-MegaStone = GARDEVOIRITE
+MegaStone = MEGAITE
 BaseStats = 68,85,65,100,165,135
 BaseExp = 309
 Abilities = PIXILATE
@@ -883,7 +883,7 @@ Generation = 6
 #-------------------------------
 [SABLEYE,1]
 FormName = Mega Sableye
-MegaStone = SABLENITE
+MegaStone = MEGAITE
 BaseStats = 50,85,125,20,85,115
 BaseExp = 168
 Abilities = MAGICBOUNCE
@@ -894,7 +894,7 @@ Generation = 6
 #-------------------------------
 [MAWILE,1]
 FormName = Mega Mawile
-MegaStone = MAWILITE
+MegaStone = MEGAITE
 BaseStats = 50,105,125,50,55,95
 BaseExp = 168
 Abilities = HUGEPOWER
@@ -906,7 +906,7 @@ Generation = 6
 #-------------------------------
 [AGGRON,1]
 FormName = Mega Aggron
-MegaStone = AGGRONITE
+MegaStone = MEGAITE
 Types = STEEL
 BaseStats = 70,140,230,50,60,80
 Abilities = FILTER
@@ -917,7 +917,7 @@ Generation = 6
 #-------------------------------
 [MEDICHAM,1]
 FormName = Mega Medicham
-MegaStone = MEDICHAMITE
+MegaStone = MEGAITE
 BaseStats = 60,100,85,100,80,85
 BaseExp = 179
 HiddenAbilities = PUREPOWER
@@ -925,7 +925,7 @@ Generation = 6
 #-------------------------------
 [MANECTRIC,1]
 FormName = Mega Manectric
-MegaStone = MANECTITE
+MegaStone = MEGAITE
 BaseStats = 70,75,80,135,135,80
 BaseExp = 201
 Abilities = INTIMIDATE
@@ -937,7 +937,7 @@ Generation = 6
 #-------------------------------
 [SHARPEDO,1]
 FormName = Mega Sharpedo
-MegaStone = SHARPEDONITE
+MegaStone = MEGAITE
 BaseStats = 70,140,70,105,110,65
 BaseExp = 196
 Abilities = STRONGJAW
@@ -949,7 +949,7 @@ Generation = 6
 #-------------------------------
 [CAMERUPT,1]
 FormName = Mega Camerupt
-MegaStone = CAMERUPTITE
+MegaStone = MEGAITE
 BaseStats = 70,120,100,20,145,105
 BaseExp = 196
 Abilities = SHEERFORCE
@@ -960,7 +960,7 @@ Generation = 6
 #-------------------------------
 [ALTARIA,1]
 FormName = Mega Altaria
-MegaStone = ALTARIANITE
+MegaStone = MEGAITE
 Types = DRAGON,FAIRY
 BaseStats = 75,110,110,80,110,105
 BaseExp = 207
@@ -989,7 +989,7 @@ Pokedex = This is the form Castform takes when covered in snow. Its body becomes
 #-------------------------------
 [BANETTE,1]
 FormName = Mega Banette
-MegaStone = BANETTITE
+MegaStone = MEGAITE
 BaseStats = 64,165,75,75,93,83
 BaseExp = 194
 Abilities = PRANKSTER
@@ -1001,7 +1001,7 @@ Generation = 6
 #-------------------------------
 [ABSOL,1]
 FormName = Mega Absol
-MegaStone = ABSOLITE
+MegaStone = MEGAITE
 Types = DARK,FAIRY
 BaseStats = 65,100,70,130,130,70
 BaseExp = 198
@@ -1013,7 +1013,7 @@ Generation = 6
 #-------------------------------
 [GLALIE,1]
 FormName = Mega Glalie
-MegaStone = GLALITITE
+MegaStone = MEGAITE
 BaseStats = 80,120,100,120,80,80
 BaseExp = 203
 Abilities = REFRIGERATE
@@ -1025,7 +1025,7 @@ Generation = 6
 #-------------------------------
 [SALAMENCE,1]
 FormName = Mega Salamence
-MegaStone = SALAMENCITE
+MegaStone = MEGAITE
 BaseStats = 95,145,130,120,120,90
 BaseExp = 350
 Abilities = AERILATE
@@ -1037,7 +1037,7 @@ Generation = 6
 #-------------------------------
 [METAGROSS,1]
 FormName = Mega Metagross
-MegaStone = METAGROSSITE
+MegaStone = MEGAITE
 BaseStats = 95,145,130,120,120,90
 BaseExp = 350
 Abilities = TOUGHCLAWS
@@ -1049,7 +1049,7 @@ Generation = 6
 #-------------------------------
 [LATIAS,1]
 FormName = Mega Latias
-MegaStone = LATIASITE
+MegaStone = MEGAITE
 BaseStats = 80,100,120,110,140,150
 BaseExp = 350
 Height = 1.8
@@ -1059,7 +1059,7 @@ Generation = 6
 #-------------------------------
 [LATIOS,1]
 FormName = Mega Latios
-MegaStone = LATIOSITE
+MegaStone = MEGAITE
 BaseStats = 80,130,100,110,160,120
 BaseExp = 350
 Height = 2.3
@@ -1169,7 +1169,7 @@ RaidRanks = 3,4,5
 #-------------------------------
 [LOPUNNY,1]
 FormName = Mega Lopunny
-MegaStone = LOPUNNITE
+MegaStone = MEGAITE
 Types = NORMAL,FIGHTING
 BaseStats = 65,136,94,135,54,96
 BaseExp = 203
@@ -1182,7 +1182,7 @@ Generation = 6
 #-------------------------------
 [GARCHOMP,1]
 FormName = Mega Garchomp
-MegaStone = GARCHOMPITE
+MegaStone = MEGAITE
 BaseStats = 108,170,115,92,120,95
 BaseExp = 350
 Abilities = SANDFORCE
@@ -1192,7 +1192,7 @@ Generation = 6
 #-------------------------------
 [LUCARIO,1]
 FormName = Mega Lucario
-MegaStone = LUCARIONITE
+MegaStone = MEGAITE
 BaseStats = 70,145,88,112,140,70
 BaseExp = 219
 Abilities = ADAPTABILITY
@@ -1204,7 +1204,7 @@ Generation = 6
 #-------------------------------
 [ABOMASNOW,1]
 FormName = Mega Abomasnow
-MegaStone = ABOMASITE
+MegaStone = MEGAITE
 BaseStats = 100,132,105,30,132,105
 BaseExp = 208
 HiddenAbilities = SNOWWARNING
@@ -1214,7 +1214,7 @@ Generation = 6
 #-------------------------------
 [GALLADE,1]
 FormName = Mega Gallade
-MegaStone = GALLADITE
+MegaStone = MEGAITE
 BaseStats = 68,165,95,110,65,115
 BaseExp = 309
 Abilities = SHARPNESS
@@ -1359,7 +1359,7 @@ Generation = 6
 #-------------------------------
 [AUDINO,1]
 FormName = Mega Audino
-MegaStone = AUDINITE
+MegaStone = MEGAITE
 Types = NORMAL,FAIRY
 BaseStats = 103,60,126,50,80,126
 BaseExp = 425
@@ -1819,7 +1819,7 @@ Shape = BipedalTail
 #-------------------------------
 [DIANCIE,1]
 FormName = Mega Diancie
-MegaStone = DIANCITE
+MegaStone = MEGAITE
 BaseStats = 50,160,110,110,160,110
 BaseExp = 350
 Abilities = MAGICBOUNCE
@@ -2377,7 +2377,7 @@ Pokedex = Legend says that by using its power to see all events from past to fut
 #-------------------------------
 [LURANTIS,1]
 FormName = Mega Lurantis
-MegaStone = LURANTISITE
+MegaStone = MEGAITE
 Types = GRASS
 BaseStats = 70,160,110,55,80,105
 BaseExp = 284
@@ -2390,7 +2390,7 @@ Generation = 8
 #-------------------------------
 [EXPLOUD,1]
 FormName = Mega Exploud
-MegaStone = EXPLOUDITE
+MegaStone = MEGAITE
 BaseStats = 104,91,83,88,131,93
 BaseExp = 320
 Abilities = PUNKROCK
@@ -2402,7 +2402,7 @@ Generation = 8
 #-------------------------------
 [WEAVILE,1]
 FormName = Mega Weavile
-MegaStone = WEAVILITE
+MegaStone = MEGAITE
 BaseStats = 70,145,80,155,60,80
 BaseExp = 236
 Abilities = REFRIGERATE
@@ -2414,7 +2414,7 @@ Generation = 8
 #-------------------------------
 [GLISCOR,1]
 FormName = Mega Gliscor
-MegaStone = GLISCORITE
+MegaStone = MEGAITE
 BaseStats = 75,115,145,110,50,115
 BaseExp = 222
 Abilities = POISONHEAL
@@ -2426,7 +2426,7 @@ Generation = 8
 #-------------------------------
 [ROTOM,6]
 FormName = Mega Rotom
-MegaStone = ROTOMITE
+MegaStone = MEGAITE
 Types = ELECTRIC,GHOST
 BaseStats = 50,35,97,131,130,97
 BaseExp = 300
@@ -2435,18 +2435,6 @@ HiddenAbilities = ADAPTABILITY
 Height = 0.2
 Weight = 0.2
 Pokedex = It has been optimized to perform at is best in battles, Mega Rotom is the ultimate mega Pokémon. 
-#-------------------------------
-[GARBODOR,1]
-FormName = Mega Garbodor
-MegaStone = GARBODORITE
-Types = POISON,STEEL
-BaseStats = 80,105,112,75,90,112
-BaseExp = 217
-Abilities = TOXICDEBRIS
-HiddenAbilities = TOXICDEBRIS
-Height = 4.7
-Weight = 1071.9
-Pokedex = The accumulation of garbage over the years has caused Mega Garbodor to gain immense power. The trail it leaves behind can feel like an entire city.
 #-------------------------------
 [ODDISH,1]
 FormName = Alolan
@@ -2532,7 +2520,7 @@ RaidRanks = 6
 #-------------------------------
 [BANETTE,2]
 FormName = Mega Banette Z
-MegaStone = BANETTEZITE
+MegaStone = MEGAITEZ
 Types = GHOST,PSYCHIC
 BaseStats = 64,129,65,151,83,63
 BaseExp = 284
@@ -2545,7 +2533,7 @@ Generation = 8
 #-------------------------------
 [VOLCARONA,1]
 FormName = Mega Volcarona
-MegaStone = VOLCARONITE
+MegaStone = MEGAITE
 BaseStats = 85,75,95,105,165,125
 BaseExp = 320
 Abilities = DROUGHT
@@ -2566,59 +2554,4 @@ TutorMoves = BATONPASS,BLAZEKICK,BOUNCE,BRICKBREAK,CHARGEBEAM,CONFIDE,DAZZLINGGL
 Height = 0.3
 Weight = 1.4
 RaidRanks = 6
-#-------------------------------
-[SNIVY,1]
-FormName = Alolan
-Types = GRASS,POISON
-BaseStats = 45,55,45,63,55,45
-Abilities = OVERGROW
-HiddenAbilities = MERCILESS
-Moves = 1,TACKLE,4,LEER,7,VINEWHIP,10,WRAP,13,GROWTH,16,LEAFTORNADO,19,LEECHSEED,22,MEGADRAIN,25,SLAM,28,LEAFBLADE,31,COIL,34,GIGADRAIN,37,WRINGOUT,40,GASTROACID,43,LEAFSTORM
-TutorMoves = AERIALACE,AQUATAIL,ATTRACT,BIND,CALMMIND,CAPTIVATE,CONFIDE,CUT,DEFOG,DOUBLETEAM,ENDURE,ENERGYBALL,FACADE,FLASH,FRUSTRATION,GASTROACID,GIGADRAIN,GRASSKNOT,GRASSPLEDGE,HIDDENPOWER,IRONTAIL,KNOCKOFF,LIGHTSCREEN,MIMIC,NATURALGIFT,NATUREPOWER,PROTECT,REFLECT,REST,RETURN,ROUND,SAFEGUARD,SECRETPOWER,SEEDBOMB,SLEEPTALK,SNATCH,SNORE,SOLARBEAM,SUBSTITUTE,SUNNYDAY,SWAGGER,SWORDSDANCE,SYNTHESIS,TAUNT,TORMENT,TOXIC,WORKUP,WORRYSEED
-Height = 0.6
-Weight = 8.1
-Color = Green
-Category = Rattle Snake
-Pokedex = They use the rattle-like tail to lure foes in and then inject a noxious poison into them.
-Generation = 8
-Flags = InheritFormWithEverStone
-Evolutions = SERVINE,Level,17
-RaidRanks = 1,2
-#-------------------------------
-[SERVINE,1]
-FormName = Alolan
-Types = GRASS,POISON
-BaseStats = 60,75,60,83,75,60
-Abilities = OVERGROW
-HiddenAbilities = MERCILESS
-Moves = 1,TACKLE,1,LEER,1,VINEWHIP,1,WRAP,4,LEER,7,VINEWHIP,10,WRAP,13,GROWTH,16,LEAFTORNADO,20,LEECHSEED,24,MEGADRAIN,28,SLAM,32,LEAFBLADE,36,COIL,40,GIGADRAIN,44,WRINGOUT,48,GASTROACID,52,LEAFSTORM
-TutorMoves = AERIALACE,AQUATAIL,ATTRACT,BIND,CALMMIND,CAPTIVATE,CONFIDE,CUT,DEFOG,DOUBLETEAM,ENDURE,ENERGYBALL,FACADE,FLASH,FRUSTRATION,GASTROACID,GIGADRAIN,GRASSKNOT,GRASSPLEDGE,HIDDENPOWER,IRONTAIL,KNOCKOFF,LIGHTSCREEN,MIMIC,NATURALGIFT,NATUREPOWER,PROTECT,REFLECT,REST,RETURN,ROUND,SAFEGUARD,SECRETPOWER,SEEDBOMB,SLEEPTALK,SNATCH,SNORE,SOLARBEAM,SUBSTITUTE,SUNNYDAY,SWAGGER,SWORDSDANCE,SYNTHESIS,TAUNT,TORMENT,TOXIC,WORKUP,WORRYSEED
-Height = 0.8
-Weight = 16.0
-Color = Green
-Shape = BipedalTail
-Category = Rattle Snake
-Pokedex = The harsh jungles of the Alola region allows Servine to sneakily catch their foes. When they use their rattle, they already have you where they want you.
-Generation = 8
-Flags = InheritFormWithEverStone
-Evolutions = SERPERIOR,Level,36
-RaidRanks = 2,3
-#-------------------------------
-[SERPERIOR,1]
-FormName = Alolan
-Types = GRASS,POISON
-BaseStats = 75,95,75,113,95,75
-Abilities = OVERGROW
-HiddenAbilities = MERCILESS
-Moves = 1,TACKLE,1,LEER,1,VINEWHIP,1,WRAP,4,LEER,7,VINEWHIP,10,WRAP,13,GROWTH,16,LEAFTORNADO,20,LEECHSEED,24,MEGADRAIN,28,SLAM,32,LEAFBLADE,38,COIL,44,GIGADRAIN,50,WRINGOUT,56,GASTROACID,62,LEAFSTORM
-TutorMoves = AERIALACE,AQUATAIL,ATTRACT,BIND,BRUTALSWING,CALMMIND,CAPTIVATE,CONFIDE,CUT,DEFOG,DOUBLETEAM,DRAGONPULSE,DRAGONTAIL,ENDURE,ENERGYBALL,FACADE,FLASH,FRENZYPLANT,FRUSTRATION,GASTROACID,GIGADRAIN,GIGAIMPACT,GRASSKNOT,GRASSPLEDGE,HIDDENPOWER,HYPERBEAM,IRONTAIL,KNOCKOFF,LIGHTSCREEN,MIMIC,NATURALGIFT,NATUREPOWER,OUTRAGE,PROTECT,REFLECT,REST,RETURN,ROCKSMASH,ROUND,SAFEGUARD,SECRETPOWER,SEEDBOMB,SLEEPTALK,SNATCH,SNORE,SOLARBEAM,STRENGTH,SUBSTITUTE,SUNNYDAY,SWAGGER,SWORDSDANCE,SYNTHESIS,TAUNT,TORMENT,TOXIC,WORKUP,WORRYSEED
-Height = 3.3
-Weight = 63.0
-Color = Green
-Shape = Serpentine
-Category = Rattle Snake
-Pokedex = The rattles they use are served as a warning. Their venom is enough to kill anything several times its size in a matter of minutes.
-Generation = 5
-Flags = InheritFormWithEverStone
-RaidRanks = 3,4,5
 
